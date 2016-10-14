@@ -4,11 +4,16 @@ from __future__ import print_function
 import sys
 import tweepy
 from ConfigParser import ConfigParser
+import pandas as pd
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class TwitterListener(tweepy.StreamListener):
     """ Twitter stream listener. """
     def on_status(self, tweet):
         print(tweet.text)
+        
 
     def on_error(self, msg):
         print('Error: %s', msg)
